@@ -24,6 +24,7 @@ import Home from "../pages/Home";
 import Contact from "../pages/Contact";
 import Specify from "../pages/Register";
 import Help from "../pages/Help";
+import Profile from "../pages/Profile";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -108,6 +109,7 @@ export default function Navbar() {
             />
             <Tab label="Contact Us" icon={<PhoneIcon />} {...a11yProps(5)} />
             <Tab label="Help" icon={<HelpIcon />} {...a11yProps(6)} />
+            <Tab label="Help" icon={<HelpIcon />} {...a11yProps(7)} />
           </Tabs>
         </AppBar>
         <TabPanel value={value} index={0}>
@@ -130,6 +132,9 @@ export default function Navbar() {
         </TabPanel>
         <TabPanel value={value} index={6}>
           <Help />
+        </TabPanel>
+        <TabPanel value={value} index={7}>
+          <Profile />
         </TabPanel>
       </div>
     </ThemeProvider>

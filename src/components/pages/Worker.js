@@ -39,6 +39,9 @@ const useStyles = makeStyles(theme => ({
       backgroundColor: theme.palette.common.white
     }
   },
+  link: {
+    margin: theme.spacing(1)
+  },
   paper: {
     marginTop: theme.spacing(8),
     display: "flex",
@@ -73,7 +76,7 @@ const useStyles = makeStyles(theme => ({
 export default function Worker() {
   const classes = useStyles();
   const [state, setState] = React.useState({
-    cook: true,
+    cook: false,
     cleaner: false,
     gardener: false,
     driver: false,
@@ -81,16 +84,36 @@ export default function Worker() {
     electrician: false,
     tutor: false,
     sitter: false,
-    mechanic: false,
-
+    mechanic: false
   });
 
   const handleChange = name => event => {
     setState({ ...state, [name]: event.target.checked });
   };
 
-  const { cook, cleaner, gardener, driver, butler, electrician, tutor, sitter, mechanic } = state;
-  const error = [cook, cleaner, gardener, driver, butler, electrician, tutor, sitter, mechanic].filter(v => v).length !== 2;
+  const {
+    cook,
+    cleaner,
+    gardener,
+    driver,
+    butler,
+    electrician,
+    tutor,
+    sitter,
+    mechanic
+  } = state;
+  const error =
+    [
+      cook,
+      cleaner,
+      gardener,
+      driver,
+      butler,
+      electrician,
+      tutor,
+      sitter,
+      mechanic
+    ].filter(v => v).length !== 2;
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = event => {
@@ -100,6 +123,7 @@ export default function Worker() {
   const handleClose = () => {
     setAnchorEl(null);
   };
+  const preventDefault = event => event.preventDefault();
 
   return (
     <Container component="main" maxWidth="xs">
@@ -306,8 +330,10 @@ export default function Worker() {
             <Grid item xs={12}>
               <FormControlLabel
                 control={<Checkbox value="allowExtraEmails" color="primary" />}
-                label="I accept the Terms & Conditions and Privacy Policy."
               />
+              <Link href="#" onClick={preventDefault} className={classes.link}>
+                {"I accept the Terms & Conditions and Privacy Policy."}
+              </Link>
             </Grid>
           </Grid>
           <Button
