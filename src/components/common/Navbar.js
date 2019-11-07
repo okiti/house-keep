@@ -18,11 +18,10 @@ import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import PhoneIcon from "@material-ui/icons/Phone";
 import ImportContactsIcon from "@material-ui/icons/ImportContacts";
 import Box from "@material-ui/core/Box";
-import Register from "../pages/Register";
-import SignIn from "../pages/Sign In";
+import SignUp from "../pages/auth/SignUp";
+import SignIn from "../pages/auth/SignIn";
 import Home from "../pages/Home";
 import Contact from "../pages/Contact";
-import Specify from "../pages/Register";
 import Help from "../pages/Help";
 import Profile from "../pages/Profile";
 
@@ -95,7 +94,7 @@ export default function Navbar() {
             aria-label="scrollable force tabs example"
           >
             <Tab label="Home page" icon={<HomeIcon />} {...a11yProps(0)} />
-            <Tab label="Register" icon={<PersonAddIcon />} {...a11yProps(1)} />
+            <Tab label="Sign Up" icon={<PersonAddIcon />} {...a11yProps(1)} />
             <Tab
               label="Sign In"
               icon={<AccountCircleIcon />}
@@ -109,20 +108,19 @@ export default function Navbar() {
             />
             <Tab label="Contact Us" icon={<PhoneIcon />} {...a11yProps(5)} />
             <Tab label="Help" icon={<HelpIcon />} {...a11yProps(6)} />
-            <Tab label="Help" icon={<HelpIcon />} {...a11yProps(7)} />
           </Tabs>
         </AppBar>
         <TabPanel value={value} index={0}>
           <Home />
         </TabPanel>
         <TabPanel value={value} index={1}>
-          <Register />
+          <SignUp />
         </TabPanel>
         <TabPanel value={value} index={2}>
           <SignIn />
         </TabPanel>
         <TabPanel value={value} index={3}>
-          Profile
+          <Profile />
         </TabPanel>
         <TabPanel value={value} index={4}>
           Book Service
@@ -132,9 +130,6 @@ export default function Navbar() {
         </TabPanel>
         <TabPanel value={value} index={6}>
           <Help />
-        </TabPanel>
-        <TabPanel value={value} index={7}>
-          <Profile />
         </TabPanel>
       </div>
     </ThemeProvider>
