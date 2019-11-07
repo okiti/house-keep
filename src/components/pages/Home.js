@@ -1,193 +1,147 @@
 import React from "react";
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
-import {
-  withStyles,
-  makeStyles,
-  createMuiTheme,
-  ThemeProvider
-} from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
-import { purple } from "@material-ui/core/colors";
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: "center",
-    color: theme.palette.text.secondary
-  },
-  margin: {
-    margin: theme.spacing(1)
-  }
-}));
-const theme = createMuiTheme({
-  palette: {
-    primary: purple,
-    secondary: {
-      main: "#f44336"
-    }
-  }
-});
-
-const ColorButton = withStyles(theme => ({
-  root: {
-    color: theme.palette.getContrastText(purple[500]),
-    backgroundColor: purple[500],
-    "&:hover": {
-      backgroundColor: purple[700]
-    }
-  }
-}))(Button);
-
+import '../../asset/css/eric.css';
+import '../../asset/css/house.css';
+import hero from '../../asset/hero1.svg';
+import hero2 from '../../asset/hero2.svg';
+import julia from '../../asset/julia.jpg';
+import kettle from '../../asset/icons/electric-kettle.svg';
+import avatar1 from '../../asset/avatar/mrTayo.jpg';
+import avatar2 from '../../asset/avatar/avatar2.jpg';
 export default function Home() {
-  const classes = useStyles();
   return (
-    <ThemeProvider theme={theme}>
-      <div className={classes.root}>
-        <Grid container spacing={3} theme={theme}>
-          <Grid item xs={12}>
-            <Paper className={classes.paper}>
-              <div>
-                <h1>Home-Service</h1>
-                <h3>Hire the Best Care for your Home</h3>
-                <p>
-                  Someone out there will treat your home as if it belongs to
-                  them. Hire a one-time or recurring service today.
-                </p>
-                <ColorButton
-                  variant="contained"
-                  color="primary"
-                  className={classes.margin}
-                >
-                  Hire/Book Services
-                </ColorButton>
-                <ColorButton
-                  variant="contained"
-                  color="primary"
-                  className={classes.margin}
-                >
-                  Apply to Render Service
-                </ColorButton>
+    <div className='flex col-lg-6 justify-content-center'>
+    <div className='flex col-lg-5 column nowrap'>
+      <section className='flex nowrap hero align-items-center'>
+        <img className='img-500 img-cover' src={hero} alt='heroimage'/>
+        <div className='flex column nowrap align-items-start mar-lr-20'>
+          <p className='text-25'>Get Work Done Faster On houseKeep</p>
+          <p className='text-13 strong'>With Confidence</p>
+          <div className='hero-search flex align-items-center'>
+            <input type='text' placeholder='Try "Gardener" '/>
+            <button>Search</button>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <ol className='flex flex-wrap services-ol'>
+        <li className='active'>
+          <a href='fb.com' className='flex align-items-center column nowrap'>
+            <img className='icon-40' src={kettle} alt='kettle-icon'/>
+            <p className='text-12 service-name'>Chef</p>
+          </a>
+        </li>
+        <li>
+          <a href='fb.com' className='flex align-items-center column nowrap'>
+            <img className='icon-40' src={kettle} alt='kettle-icon'/>
+            <p className='text-12 service-name'>Chef</p>
+          </a>
+        </li>
+        <li>
+          <a href='fb.com' className='flex align-items-center column nowrap'>
+            <img className='icon-40' src={kettle} alt='kettle-icon'/>
+            <p className='text-12 service-name'>Chef</p>
+          </a>
+        </li>
+        </ol>
+      </section>
+
+      <section>
+        <ol className='flex flex-wrap justify-content-center profile-ol'>
+        <li className='flex column nowrap card-view'>
+            <img className='avatar' src={avatar1} alt='userimage'/>
+            <div className='flex column nowrap pf-info'>
+              <p className='strong'>Mr Tayo | Electrician</p>
+              <div className='flex'>
+              <i class="material-icons">star_border</i>
+                <p className='strong'>4.8</p>
+                <p className='color-ash'> &nbsp;&nbsp;Airport rd. Lagos</p>
               </div>
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper className={classes.paper}>
-              <div>
-                <h1>How it works</h1>
+            </div>
+          </li>
+          <li className='flex column nowrap card-view'>
+            <img className='avatar' src={avatar2} alt='userimage'/>
+            <div className='flex column nowrap pf-info'>
+              <p className='strong'>Elizabeth Azeez | Baby sitter</p>
+              <div className='flex'>
+              <i class="material-icons">star_border</i>
+                <p className='strong'>3.6</p>
+                <p className='color-ash'> &nbsp;&nbsp;Montgomery Yaba, Lagos</p>
               </div>
-            </Paper>
-          </Grid>
-          <Grid item xs={6} sm={3}>
-            <Paper className={classes.paper}>
-              <div>
-                <img src="" alt="" />
-                <h3>Register/Sign Up</h3>
-                <p>
-                  Register on our website to become involved and also experience
-                  the best services we have to offer.
-                </p>
+            </div>
+          </li>
+          <li className='flex column nowrap card-view'>
+            <img className='avatar' src={avatar1} alt='userimage'/>
+            <div className='flex column nowrap pf-info'>
+              <p className='strong'>Mr Tayo | Electrician</p>
+              <div className='flex'>
+              <i class="material-icons">star_border</i>
+                <p className='strong'>4.8</p>
+                <p className='color-ash'> &nbsp;&nbsp;Airport rd. Lagos</p>
               </div>
-            </Paper>
-          </Grid>
-          <Grid item xs={6} sm={3}>
-            <Paper className={classes.paper}>
-              <div>
-                <img src="" alt="" />
-                <h3>Find your Matches</h3>
-                <p>
-                  Reach out to potential hire through our platform by checking
-                  out their staff profile
-                </p>
+            </div>
+          </li>
+          <li className='flex column nowrap card-view'>
+            <img className='avatar' src={avatar2} alt='userimage'/>
+            <div className='flex column nowrap pf-info'>
+              <p className='strong'>Elizabeth Azeez | Baby sitter</p>
+              <div className='flex'>
+              <i class="material-icons">star_border</i>
+                <p className='strong'>3.6</p>
+                <p className='color-ash'> &nbsp;&nbsp;Montgomery Yaba, Lagos</p>
               </div>
-            </Paper>
-          </Grid>
-          <Grid item xs={6} sm={3}>
-            <Paper className={classes.paper}>
-              <div>
-                <img src="" alt="" />
-                <h3>Find your Matches</h3>
-                <p>
-                  Reach out to potential hire through our platform by checking
-                  out their staff profile
-                </p>
-              </div>
-            </Paper>
-          </Grid>
-          <Grid item xs={6} sm={3}>
-            <Paper className={classes.paper}>
-              <div>
-                <img src="" alt="" />
-                <h3>Shortlist your Favorite and Hire</h3>
-                <p>
-                  Now you are all set for the last step. Click the profile that
-                  stands out to you an click the hire button. Easy!!!{" "}
-                </p>
-              </div>
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper className={classes.paper}>
-              <div>
-                <h1>Our Services</h1>
-                <div>
-                  <img src="" alt="" />
-                  <h3>Trust Staff</h3>
-                  <p>
-                    We provide the most trusted services for your safety and
-                    also for the security
-                  </p>
-                </div>
-                <div>
-                  <img src="" alt="" />
-                  <h3>Note on User Profile</h3>
-                  <p>
-                    Write private notes on users' profiles to remember special
-                    details about communications or interviews you've had with
-                    them
-                  </p>
-                </div>
-                <div>
-                  <img src="" alt="" />
-                  <h3>Best Customer Service</h3>
-                  <p>
-                    Enjoy access to a world class customer support team
-                    dedicated to helping you find the perfect match for you.
-                  </p>
-                </div>
-                <div>
-                  <img src="" alt="" />
-                  <h3>Fast Service and Secure</h3>
-                  <p>
-                    Get fast service based on time of booking and details
-                    provided by the user.
-                  </p>
-                </div>
-              </div>
-            </Paper>
-          </Grid>
-          <Grid item xs={12}>
-            <Paper className={classes.paper}>
-              <div>
-                <h3>Who we are</h3>
-                <p>
-                  Homeservice.com is your go to online service for finding
-                  professional personnel to keep your home up and running. Our
-                  website is a job posting service focused on connecting people
-                  with a community of qualified professionals for home cleaning,
-                  maintenance, management, e.t.c . So whether you’re looking for
-                  a cook, cleaner, nanny, gardener, baby sitter, driver, butler,
-                  electrician, e.t.c or you’re a professional looking for work—
-                  Homeservice.com can help!
-                </p>
-              </div>
-            </Paper>
-          </Grid>
-        </Grid>
-      </div>
-    </ThemeProvider>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section className='flex mar-t-100'>
+        <ol className='fact-ol'>
+          <li>
+            <p className='text-30 strong'>Do more with less</p>
+          </li>
+          <li>
+            <p className='strong flex align-items-center'> <i class="material-icons success-icon">check_circle_outline</i> &nbsp;&nbsp;&nbsp;Payment protection garanteed</p>
+            <p>Payment is released to the freelancer once you’re pleased and approve the work you get.</p>
+          </li>
+          <li>
+            <p className='strong flex align-items-center'> <i class="material-icons success-icon">check_circle_outline</i> &nbsp;&nbsp;&nbsp;Know the price upfront</p>
+            <p>Find any service within minutes and know exactly what you’ll pay. No hourly rates, just a fixed price.</p>
+          </li>
+          <li>
+            <p className='strong flex align-items-center'> <i class="material-icons success-icon">check_circle_outline</i> &nbsp;&nbsp;&nbsp;We're here for you 24/7</p>
+            <p>House keep is here for you, anything from answering any questions to resolving any issues, at any time.</p>
+          </li>
+        </ol>
+        <img className='img-500 img-cover' src={hero2} alt='heroimage'/>
+      </section>
+
+      <section className='flex mar-t-100'>
+        <img className='img-500 img-cover' src={julia} alt='heroimage'/>
+        <ol className='started-ol'>
+          <li>
+            <p className='text-30 strong'>Get started in 3 simple steps</p>
+          </li>
+          <li className='flex nowrap align-items-center'>
+            <span className='numbering'>1</span>
+            <p>
+              Register and complete your profile
+            </p>
+          </li>
+          <li className='flex nowrap align-items-center'>
+            <span className='numbering'>2</span>
+            <p>
+              Search for a service
+            </p>
+          </li>
+          <li className='flex nowrap align-items-center'>
+            <span className='numbering'>3</span>
+            <p>
+              Wait so we get it done
+            </p>
+          </li>
+        </ol>
+      </section>
+    </div></div>
   );
 }
