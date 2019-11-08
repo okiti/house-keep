@@ -25,6 +25,7 @@ import Contact from "../pages/Contact";
 import Help from "../pages/Help";
 import Profile from "../pages/Profile";
 import CreateProfile from "../pages/profile/CreateProfile";
+import { connect } from "react-redux";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -73,7 +74,7 @@ const theme = createMuiTheme({
   }
 });
 
-export default function Navbar() {
+function Navbar() {
   const classes = useStyles();
 
   const [value, setValue] = React.useState(0);
@@ -136,3 +137,10 @@ export default function Navbar() {
     </ThemeProvider>
   );
 }
+
+function mapStateToProps(state) {
+  console.log(state);
+  return {};
+}
+
+export default connect(mapStateToProps)(Navbar);
