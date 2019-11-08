@@ -3,23 +3,6 @@ import Logo from "../../../asset/logo.png";
 import "../../../asset/css/eric.css";
 import "../../../asset/css/signin.css";
 import { Link } from "react-router-dom";
-import Typography from "@material-ui/core/Typography";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Container from "@material-ui/core/Container";
-import Box from "@material-ui/core/Box";
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://github.com/Temmietayo/house-keep">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 
 class SignIn extends Component {
   state = {
@@ -35,18 +18,17 @@ class SignIn extends Component {
   };
   render() {
     return (
-      <Container component="main" maxWidth="xs">
-        <CssBaseline />
-        <div className="flex column justify-content-center">
-          <div className="flex column nowrap">
-            <section className="flex nowrap align-items-center">
+      <div className='mar-tb-30'>
+        <div className="flex justify-content-center">
+          <div className="flex column nowrap align-items-center">
+            <section className="flex column nowrap align-items-center">
               <img src={Logo} alt="Logo" className="form-img" />
               <div className="flex column nowrap align-items-center mar-tb-15">
                 <p className="text-20 strong">Sign In</p>
               </div>
             </section>
             <section className="flex nowrap align-items-center">
-              <form onSubmit={this.handleSubmit}>
+              <form className='flex column nowrap' onSubmit={this.handleSubmit}>
                 <input
                   type="email"
                   name="email"
@@ -63,6 +45,7 @@ class SignIn extends Component {
                   required
                   onChange={this.handleChange}
                 />
+                <div className='flex align-items-center nowrap'>
                 <input
                   type="checkbox"
                   name="remember"
@@ -70,25 +53,24 @@ class SignIn extends Component {
                   id="remember"
                   checked
                   onChange={this.handleChange}
-                />
+                />&nbsp;&nbsp;&nbsp;
                 Remember me <br />
+                </div>
+                
                 <button type="submit">SIGN IN</button>
               </form>
             </section>
-            <section className="flex nowrap align-items-center">
+            <section className="flex column nowrap align-items-center">
               <Link>
-                <p>Forgot password?</p>
+                <p className='text-12'>Forgot password?</p>
               </Link>
               <Link>
                 <p>Don't have an account? Sign Up</p>
               </Link>
             </section>
-            <Box mt={8}>
-              <Copyright />
-            </Box>
           </div>
         </div>
-      </Container>
+      </div>
     );
   }
 }
