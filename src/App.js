@@ -1,12 +1,18 @@
 import React from "react";
-import Home from "./components/pages/Home";
 import Navbar from "./components/common/Navbar";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import ProfileDetails from "./components/pages/profile/ProfileDetails";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <Switch>
+          <Route exact path="/profile/:id" component={ProfileDetails} />
+        </Switch>
+      </div>
+    </BrowserRouter>
   );
 }
 

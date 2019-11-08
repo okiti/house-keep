@@ -13,6 +13,7 @@ import {
   import Home from "./components/pages/Home";
   import Contact from "./components/pages/Contact";
   import Help from "./components/pages/Help";
+  import ProfileDetails from "./components/pages/profile/ProfileDetails"
   
 
 export default function Routes() {
@@ -28,6 +29,7 @@ export default function Routes() {
             <Route exact path="/contact" component={Contact} />
             <Route exact path="/terms" component={Terms} />
             <Route exact path="/help" component={Help} />
+            <Route path="/profile/:id" component={ProfileDetails}/>
           </Switch>
         </Router> 
         </div>

@@ -24,6 +24,7 @@ import Home from "../pages/Home";
 import Contact from "../pages/Contact";
 import Help from "../pages/Help";
 import Profile from "../pages/Profile";
+import CreateProfile from "../pages/profile/CreateProfile";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -129,7 +130,7 @@ export default function Navbar() {
           <Contact />
         </TabPanel>
         <TabPanel value={value} index={6}>
-          <Help />
+          <CreateProfile />
         </TabPanel>
       </div>
     </ThemeProvider>

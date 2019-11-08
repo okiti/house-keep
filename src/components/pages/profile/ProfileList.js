@@ -1,15 +1,20 @@
 import React from "react";
 import ProfileSummary from "./ProfileSummary";
+import { Link } from "react-router-dom";
 
-function ProfileList() {
+const ProfileList = ({ profiles }) => {
   return (
     <div>
-      <ProfileSummary />
-      <ProfileSummary />
-      <ProfileSummary />
-      <ProfileSummary />
+      {profiles &&
+        profiles.map(profile => {
+          return (
+            <Link to={"/profile/" + profile.id}>
+              <ProfileSummary profile={profile} key={profile.id} />
+            </Link>
+          );
+        })}
     </div>
   );
-}
+};
 
 export default ProfileList;

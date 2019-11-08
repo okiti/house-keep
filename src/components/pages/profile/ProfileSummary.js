@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function ProfileList() {
+const ProfileSummary = ({ profile }) => {
   const classes = useStyles();
 
   return (
@@ -50,13 +50,13 @@ export default function ProfileList() {
               <Grid item xs container direction="column" spacing={3}>
                 <Grid item xs>
                   <Typography gutterBottom variant="subtitle1">
-                    Name: Abiola Abdulwaheed
+                    {profile.name}
                   </Typography>
                   <Typography variant="body2" gutterBottom>
                     Skills: Electrican, Driver
                   </Typography>
                   <Typography variant="body2" color="textSecondary">
-                    Work Experience: 5 years
+                    {profile.work}
                   </Typography>
                   <Typography variant="body2" gutterBottom>
                     Rating
@@ -79,4 +79,6 @@ export default function ProfileList() {
       <div className={classes.padding}></div>
     </Container>
   );
-}
+};
+
+export default ProfileSummary;
